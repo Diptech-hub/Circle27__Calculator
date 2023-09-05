@@ -13,6 +13,8 @@ const buttons = document.querySelectorAll(".key");
 
 //========================================================
 let input = "";
+
+// using FOR OF loops  to iterate over each button  and execute the code .
 for (let button of buttons) {
   const value = button.value;
 
@@ -22,9 +24,28 @@ for (let button of buttons) {
       displayInput.innerHTML = "";
       displayOutput.innerHTML = "";
     } else if (value == "backspace") {
+      // using slice expression to extract characters  from the screen when backspace is  clicked.
+      // note that using a negative index at the end will remove the last charater from the string....
+
       input = input.slice(0, -1);
       displayInput.innerHTML = input;
-    } else if (value == "=") {
+    } // evntlisteners btns for powers , square , squareroot
+    else if (value == "sqr2") {
+      displayInput.innerHTML = `${input} ^2`;
+      input = input * input;
+      displayOutput.innerHTML = input;
+    } else if (value == "sqrt") {
+      displayInput.innerHTML = ` &#x221A; ${input}`;
+      displayOutput.innerHTML = Math.sqrt(input);
+    } else if (value == "div") {
+      displayInput.innerHTML = `1/ ${input} `;
+      displayOutput.innerHTML = 1 / input;
+    } else if (value == "sqrp") {
+      displayInput.innerHTML = `10 ^ ${input} `;
+      displayOutput.innerHTML = Math.pow(10, input);
+    } // eval functon enables the evaluation of arithmetic operation e.g "eval("2+4*2") == 10" . 
+    // it evaluates the string expression and returns an integer as result
+    else if (value == "=") {
       let result = eval(prepareInput(input));
       displayOutput.innerHTML = result;
     } else {
@@ -38,7 +59,7 @@ for (let button of buttons) {
 
 function validateInput(value) {
   let last_input = input.slice(-1);
-  let operators = ["+", "-", "*", "/"];
+  let operators = ["+", "-", "*", "/", "^"];
 
   if (value == "." && last_input == ".") {
     return false;
@@ -56,6 +77,7 @@ function validateInput(value) {
 }
 
 function prepareInput(input) {
+  //input.spilt methods creates an array from the inputs passed in.
   let input_array = input.split("");
   for (let i = 0; i < input_array.length; i++) {
     if (input_array[i] == "%") {
