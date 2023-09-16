@@ -1,0 +1,116 @@
+* {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background: #040404;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 50px;
+  }
+  
+  .container {
+    background-color: #0a0a0a;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    padding: 15px 25px;
+    user-select: none;
+    border-radius: 15px;
+    z-index: 999;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.314);
+  }
+  
+  .circle{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    margin-left: 300px;
+    margin-top: -550px;
+  }
+  #display-area {
+    width: 100%;
+    margin: 3vh 0;
+    margin-bottom: 0px;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, minmax(40px, auto));
+    display: grid;
+    padding-bottom: 20px;
+    word-wrap: break-word;
+    border-bottom: 1px rgba(128, 128, 128, 128, 0.166);
+    box-shadow: 0px 10px 20px rgba(21, 21, 21, 0.151);
+    padding-bottom: 40px;
+
+  }
+  
+  #display-area .currentInput {
+    text-align: right;
+    color: white;
+    font-size: larger;
+    word-wrap: break-word;
+    height: 5vh;
+  }
+  
+  #display-area .answerScreen {
+    text-align: right;
+    height: 7px;
+    font-weight: bold;
+    font-size: xx-large;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+  }
+  
+  .keypad-btns {
+    display: grid;
+    grid: repeat(5, 70px) / repeat(4, 70px);
+    gap: 15px;
+    cursor: pointer;
+  }
+  
+  .keypad-btns button {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: x-large;
+    cursor: pointer;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 8px 10px rgba(26, 25, 25, 0.523);
+  }
+  
+  .keypad-btns .fun_btn {
+    background-color: #0e0e0e;
+    color: #ffffff;
+  }
+  #evaluate{
+    background-color: #8a29ea;
+  }
+  .num_btn {
+    background-color: #090909;
+    /* box-shadow: 0px 5px 5px rgba(40, 40, 40, 0.107); */
+  }
+  
+  .num_btn:hover,
+  .fun_btn:hover {
+    background-color: rgba(18, 18, 18, 0.979);
+  }
+  .lineone{
+    font-size: 15px !important;
+    text-align: center;
+    background-color: #0a0a0a;
+    margin-top: 20px;
+    box-shadow: 0px 5px 5px rgba(4, 4, 4, 0) !important;
+  }
+  .linetwo{
+    color: #646464 !important;
+  }
+ 
+  @media only screen and (max-width: 600px) {
+    body {
+      background-color: #131313;
+      align-items: flex-start;
+    }
+  }
+  
